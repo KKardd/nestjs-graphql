@@ -13,6 +13,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // 자동으로 스키마 생성
+      // posts module은 Schema First로 구현해보기
       installSubscriptionHandlers: true,
     }),
   ],
