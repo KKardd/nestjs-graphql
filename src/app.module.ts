@@ -6,6 +6,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { PrismaService } from './prisma.service';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       typePaths: ['./**/*.gql'],
       installSubscriptionHandlers: true,
     }),
+    CommentsModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
